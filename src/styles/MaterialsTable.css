@@ -1,0 +1,75 @@
+.materiales-container {
+    padding: 20px;
+    background-color: #121212; /* Fondo negro */
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white; /* Texto blanco */
+}
+
+/* Tabla de materiales */
+.materiales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Estilos de encabezados y celdas */
+.materiales-table th,
+.materiales-table td {
+    padding: 12px;
+    text-align: center;
+    border: 2px solid #7B1E32; /* Contorno vino */
+    background: rgba(245, 222, 179, 0.9); /* Fondo crema */
+    color: black; /* Texto negro */
+}
+
+/* Encabezados de la tabla */
+.materiales-table th {
+    background-color: #7B1E32; /* Fondo vino */
+    color: white; /* Texto blanco */
+}
+
+/* Filas pares */
+.materiales-table tr:nth-child(even) {
+    background-color: rgba(245, 222, 179, 0.7); /* Crema más claro */
+}
+
+/* Efecto hover */
+.materiales-table tr:hover {
+    background-color: rgba(245, 222, 179, 1); /* Crema más intenso */
+}
+
+/* Estilos de los botones */
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin: 5px;
+    border: 2px solid #7B1E32; /* Contorno vino */
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Botón de edición */
+.edit-button {
+    background-color: #7B1E32; /* Vino */
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #5A1625; /* Vino más oscuro */
+}
+
+/* Botón de eliminación */
+.delete-button {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Rojo más oscuro */
+}

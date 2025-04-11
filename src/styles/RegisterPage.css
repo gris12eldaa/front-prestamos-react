@@ -1,0 +1,82 @@
+/* Eliminar márgenes y padding del body y html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Fondo negro */
+}
+
+.register-box {
+  background: rgba(245, 222, 179, 0.8); /* Crema con menos transparencia */
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #7B1E32; /* Contorno vino */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  width: 70%;
+  text-align: center;
+}
+
+.register-title {
+  color: white; /* Texto blanco */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas de tamaño igual */
+  gap: 1rem;
+}
+
+.register-input {
+  width: 90%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(245, 222, 179, 0.5); /* Crema claro */
+  color: black; /* Texto negro */
+  margin-bottom: 1rem;
+  border: 2px solid #7B1E32; /* Contorno vino */
+  outline: none;
+}
+
+.register-input:focus {
+  border: 2px solid #A52A2A; /* Rojo oscuro al enfocar */
+}
+
+.register-button {
+  width: 100%;
+  background-color: #7B1E32; /* Vino */
+  color: white; /* Texto blanco */
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-button:hover {
+  background-color: #5A1625; /* Vino más oscuro */
+}
+
+.register-login-text {
+  color: white; /* Texto blanco */
+  margin-top: 1rem;
+}
+
+.register-login-link {
+  color: #F5DEB3; /* Crema */
+  cursor: pointer;
+}
+
+.register-login-link:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}

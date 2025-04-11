@@ -1,0 +1,65 @@
+.usuarios-container {
+  padding: 20px;
+  background-color: #f4f4f9; /* Fondo crema claro */
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333; /* Color de texto */
+}
+
+.usuarios-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.usuarios-table th,
+.usuarios-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #7B1E32; /* Contorno vino */
+}
+
+.usuarios-table th {
+  background-color: #7B1E32; /* Fondo de encabezado vino */
+  color: white; /* Texto blanco */
+}
+
+.usuarios-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Fondo alterno claro */
+}
+
+.usuarios-table tr:hover {
+  background-color: #ddd; /* Fondo al pasar el mouse */
+}
+
+/* Estilos de los botones */
+button {
+  padding: 8px 15px;
+  font-size: 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #7B1E32; /* Fondo vino */
+  color: white; /* Texto blanco */
+}
+
+.edit-button:hover {
+  background-color: #5A1625; /* Vino más oscuro al pasar el mouse */
+}
+
+.delete-button {
+  background-color: #f44336; /* Fondo rojo */
+  color: white; /* Texto blanco */
+}
+
+.delete-button:hover {
+  background-color: #e53935; /* Rojo más oscuro al pasar el mouse */
+}

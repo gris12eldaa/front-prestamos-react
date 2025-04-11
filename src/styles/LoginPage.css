@@ -1,0 +1,76 @@
+/* Eliminar márgenes y padding del body y html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Fondo negro */
+}
+
+.login-box {
+  background: rgba(245, 222, 179, 0.2); /* Crema con transparencia */
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 2px solid #7B1E32; /* Contorno vino */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 24rem;
+  text-align: center;
+}
+
+.login-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(245, 222, 179, 0.5); /* Crema claro */
+  color: black;
+  margin-bottom: 1rem;
+  border: 2px solid #7B1E32; /* Contorno vino */
+  outline: none;
+}
+
+.login-input:focus {
+  border: 2px solid #7B1E32;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #7B1E32; /* Vino */
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-button:hover {
+  background-color: #5A1625; /* Vino más oscuro */
+}
+
+.login-register-text {
+  color: white;
+  margin-top: 1rem;
+}
+
+.login-register-link {
+  color: #F5DEB3; /* Crema */
+  cursor: pointer;
+}
+
+.login-register-link:hover {
+  text-decoration: underline;
+}
