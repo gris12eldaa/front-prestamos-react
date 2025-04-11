@@ -10,7 +10,7 @@ export default function PrestamosTable() {
 
   useEffect(() => {
     axios
-      .get("https://crud-python-prestamos.onrender.com/prestamos", {
+      .get("https://crud-python-prestamos.onrender.com/prestamos/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
