@@ -54,6 +54,14 @@ export default function PrestamosEdit() {
       });
   };
 
+  const getTodayDatetimeLocal = () => {
+    const now = new Date();
+    now.setSeconds(0, 0);
+    const offset = now.getTimezoneOffset();
+    const localDate = new Date(now.getTime() - offset * 60000);
+    return localDate.toISOString().slice(0, 16);
+  };
+
   return (
     <div className="edit-prestamo-container">
       <div className="edit-prestamo-box">
@@ -94,6 +102,7 @@ export default function PrestamosEdit() {
               value={prestamo.fecha_prestamo}
               onChange={handleChange}
               className="prestamo-input"
+              min={getTodayDatetimeLocal()}
               required
             />
           </div>
@@ -107,6 +116,7 @@ export default function PrestamosEdit() {
               value={prestamo.fecha_devolucion}
               onChange={handleChange}
               className="prestamo-input"
+              min={getTodayDatetimeLocal()}
               required
             />
           </div>
