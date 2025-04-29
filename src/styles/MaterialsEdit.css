@@ -1,3 +1,4 @@
+/* Contenedor principal */
 .edit-material-container {
   width: 80%;
   margin: 50px auto;
@@ -7,13 +8,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Caja principal del formulario */
+/* Caja interna del formulario */
 .create-prestamo-box {
   background-color: #121212;
   padding: 30px;
   border-radius: 12px;
 }
 
+/* Título */
 .create-prestamo-title {
   text-align: center;
   font-size: 28px;
@@ -21,38 +23,41 @@
   color: white;
 }
 
-/* Formulario con separación adecuada */
+/* Formulario principal */
 .edit-material-form {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  justify-content: center; /* Asegura que los campos estén centrados */
 }
 
-/* Agrupador de cada campo con espaciado inferior */
+/* Campo con espaciado */
 .prestamo-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px; /* Espacio entre campos */
 }
 
+/* Etiquetas */
 .prestamo-label {
   font-size: 16px;
   margin-bottom: 8px;
   color: white;
 }
 
+/* Inputs */
 .prestamo-input {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #7B1E32;
+  border-radius: 8px;
   background-color: #2C2C2C;
   color: #F5DEB3;
-  border: 2px solid #7B1E32;
-  outline: none;
-  transition: border-color 0.3s ease;
+  transition: border 0.3s ease-in-out;
 }
 
 .prestamo-input:focus {
-  border-color: #2C2C2C;
+  border-color: #F5DEB3;
   outline: none;
 }
 
@@ -60,6 +65,7 @@
   border-color: #e74c3c;
 }
 
+/* Botón */
 .prestamo-button {
   padding: 12px;
   font-size: 16px;

@@ -67,8 +67,8 @@ export default function UsersEdit() {
     <div className="edit-user-container">
       <h2>Editar Usuario</h2>
       <form onSubmit={handleSubmit} className="edit-user-form">
-        <div className="form-group">
-          <label htmlFor="nombre">Nombre:</label>
+        <div className="user-field">
+          <label htmlFor="nombre" className="user-label">Nombre:</label>
           <input
             type="text"
             id="nombre"
@@ -76,12 +76,13 @@ export default function UsersEdit() {
             placeholder="Nombre"
             value={usuario.nombre}
             onChange={handleChange}
+            className="user-input"
             required
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="primerApellido">Apellido Paterno:</label>
+        <div className="user-field">
+          <label htmlFor="primerApellido" className="user-label">Apellido Paterno:</label>
           <input
             type="text"
             id="primerApellido"
@@ -89,12 +90,13 @@ export default function UsersEdit() {
             placeholder="Apellido Paterno"
             value={usuario.primerApellido}
             onChange={handleChange}
+            className="user-input"
             required
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="segundoApellido">Apellido Materno:</label>
+        <div className="user-field">
+          <label htmlFor="segundoApellido" className="user-label">Apellido Materno:</label>
           <input
             type="text"
             id="segundoApellido"
@@ -102,17 +104,19 @@ export default function UsersEdit() {
             placeholder="Apellido Materno"
             value={usuario.segundoApellido}
             onChange={handleChange}
+            className="user-input"
             required
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="tipoUsuario">Tipo de Usuario:</label>
+        <div className="user-field">
+          <label htmlFor="tipoUsuario" className="user-label">Tipo de Usuario:</label>
           <select
             id="tipoUsuario"
             name="tipoUsuario"
             value={usuario.tipoUsuario}
             onChange={handleChange}
+            className="user-input"
             required
           >
             <option value="">-- Selecciona el tipo de usuario --</option>
@@ -121,8 +125,8 @@ export default function UsersEdit() {
           </select>
         </div>
         
-        <div className="form-group">
-          <label htmlFor="nombreUsuario">Nombre de Usuario:</label>
+        <div className="user-field">
+          <label htmlFor="nombreUsuario" className="user-label">Nombre de Usuario:</label>
           <input
             type="text"
             id="nombreUsuario"
@@ -130,12 +134,13 @@ export default function UsersEdit() {
             placeholder="Nombre de Usuario"
             value={usuario.nombreUsuario}
             onChange={handleChange}
+            className="user-input"
             required
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="correoElectronico">Correo Electrónico:</label>
+        <div className="user-field">
+          <label htmlFor="correoElectronico" className="user-label">Correo Electrónico:</label>
           <input
             type="email"
             id="correoElectronico"
@@ -143,12 +148,13 @@ export default function UsersEdit() {
             placeholder="Correo Electrónico"
             value={usuario.correoElectronico}
             onChange={handleChange}
+            className="user-input"
             required
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="numeroTelefono">Número de Teléfono:</label>
+        <div className="user-field">
+          <label htmlFor="numeroTelefono" className="user-label">Número de Teléfono:</label>
           <input
             type="text"
             id="numeroTelefono"
@@ -156,17 +162,19 @@ export default function UsersEdit() {
             placeholder="Número de Teléfono"
             value={usuario.numeroTelefono}
             onChange={handleChange}
+            className="user-input"
             required
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="estatus">Estatus:</label>
+        <div className="user-field">
+          <label htmlFor="estatus" className="user-label">Estatus:</label>
           <select
             id="estatus"
             name="estatus"
             value={usuario.estatus}
             onChange={handleChange}
+            className="user-input"
             required
           >
             <option value="Activo">Activo</option>
@@ -174,7 +182,7 @@ export default function UsersEdit() {
           </select>
         </div>
         
-        <button type="submit" className="submit-button">Actualizar Usuario</button>
+        <button type="submit" className="user-button">Actualizar Usuario</button>
       </form>
     </div>
   );

@@ -56,7 +56,9 @@ export default function MaterialsEdit() {
         <h2 className="create-prestamo-title">Editar Material</h2>
         <form onSubmit={handleSubmit} className="edit-material-form">
           <div className="prestamo-field">
-            <label htmlFor="tipo_material" className="prestamo-label">Tipo de Material:</label>
+            <label htmlFor="tipo_material" className="prestamo-label">
+              Tipo de Material:
+            </label>
             <input
               type="text"
               id="tipo_material"
@@ -69,7 +71,9 @@ export default function MaterialsEdit() {
           </div>
 
           <div className="prestamo-field">
-            <label htmlFor="marca" className="prestamo-label">Marca:</label>
+            <label htmlFor="marca" className="prestamo-label">
+              Marca:
+            </label>
             <input
               type="text"
               id="marca"
@@ -82,7 +86,9 @@ export default function MaterialsEdit() {
           </div>
 
           <div className="prestamo-field">
-            <label htmlFor="modelo" className="prestamo-label">Modelo:</label>
+            <label htmlFor="modelo" className="prestamo-label">
+              Modelo:
+            </label>
             <input
               type="text"
               id="modelo"
@@ -95,7 +101,9 @@ export default function MaterialsEdit() {
           </div>
 
           <div className="prestamo-field">
-            <label htmlFor="estado" className="prestamo-label">Estado:</label>
+            <label htmlFor="estado" className="prestamo-label">
+              Estado:
+            </label>
             <select
               id="estado"
               name="estado"
