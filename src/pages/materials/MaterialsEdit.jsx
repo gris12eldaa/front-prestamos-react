@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import "../../styles/MaterialsEdit.css"; // Asegúrate de agregar la ruta del archivo de estilos
+import "../../styles/MaterialsEdit.css";
 
 export default function MaterialsEdit() {
   const [material, setMaterial] = useState({
@@ -9,35 +9,26 @@ export default function MaterialsEdit() {
     marca: "",
     modelo: "",
     estado: "Disponible",
-    nombre: "",
-    descripcion: "",
-    cantidad: 0,
   });
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     axios
       .get(`https://crud-python-prestamos.onrender.com/materials/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+        headers: { Authorization: `Bearer ${token}` },
       })
-      .then((response) => {
-        setMaterial(response.data);
-      })
-      .catch((error) => {
-        console.error("Hubo un error al obtener los datos del material:", error);
-      });
+      .then((res) => setMaterial(res.data))
+      .catch((err) =>
+        console.error("Hubo un error al obtener los datos del material:", err)
+      );
   }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setMaterial({
-      ...material,
-      [name]: value,
-    });
+    setMaterial((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -46,63 +37,83 @@ export default function MaterialsEdit() {
     axios
       .put(`https://crud-python-prestamos.onrender.com/materialsUpdate/${id}`, material, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       })
-      .then((response) => {
-        console.log("Material actualizado:", response.data);
+      .then((res) => {
+        console.log("Material actualizado:", res.data);
         navigate("/materials");
       })
-      .catch((error) => {
-        console.error("Hubo un error al actualizar el material:", error);
-      });
+      .catch((err) =>
+        console.error("Hubo un error al actualizar el material:", err)
+      );
   };
 
   return (
     <div className="edit-material-container">
-      <h2>Editar Material</h2>
-      <form onSubmit={handleSubmit} className="edit-material-form">
-        <div className="form-group">
-          <label htmlFor="tipo_material">Tipo de Material:</label>
-          <input type="text" id="tipo_material" name="tipo_material" value={material.tipo_material} onChange={handleChange} required />
-        </div>
+      <div className="create-prestamo-box">
+        <h2 className="create-prestamo-title">Editar Material</h2>
+        <form onSubmit={handleSubmit} className="edit-material-form">
+          <div className="prestamo-field">
+            <label htmlFor="tipo_material" className="prestamo-label">Tipo de Material:</label>
+            <input
+              type="text"
+              id="tipo_material"
+              name="tipo_material"
+              className="prestamo-input"
+              value={material.tipo_material}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="marca">Marca:</label>
-          <input type="text" id="marca" name="marca" value={material.marca} onChange={handleChange} required />
-        </div>
+          <div className="prestamo-field">
+            <label htmlFor="marca" className="prestamo-label">Marca:</label>
+            <input
+              type="text"
+              id="marca"
+              name="marca"
+              className="prestamo-input"
+              value={material.marca}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="modelo">Modelo:</label>
-          <input type="text" id="modelo" name="modelo" value={material.modelo} onChange={handleChange} required />
-        </div>
+          <div className="prestamo-field">
+            <label htmlFor="modelo" className="prestamo-label">Modelo:</label>
+            <input
+              type="text"
+              id="modelo"
+              name="modelo"
+              className="prestamo-input"
+              value={material.modelo}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="estado">Estado:</label>
-          <select id="estado" name="estado" value={material.estado} onChange={handleChange} required>
-            <option value="Disponible">Disponible</option>
-            <option value="No Disponible">No Disponible</option>
-          </select>
-        </div>
+          <div className="prestamo-field">
+            <label htmlFor="estado" className="prestamo-label">Estado:</label>
+            <select
+              id="estado"
+              name="estado"
+              className="prestamo-input"
+              value={material.estado}
+              onChange={handleChange}
+              required
+            >
+              <option value="Disponible">Disponible</option>
+              <option value="Prestado">Prestado</option>
+            </select>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" value={material.nombre} onChange={handleChange} required />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" value={material.descripcion} onChange={handleChange} required />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="cantidad">Cantidad:</label>
-          <input type="number" id="cantidad" name="cantidad" value={material.cantidad} onChange={handleChange} required />
-        </div>
-
-        <button type="submit" className="submit-button">Actualizar Material</button>
-      </form>
+          <button type="submit" className="prestamo-button">
+            Actualizar Material
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

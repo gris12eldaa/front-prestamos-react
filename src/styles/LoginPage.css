@@ -1,73 +1,89 @@
-/* Eliminar márgenes y padding del body y html */
+/* Reset de márgenes */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Fondo negro */
 }
 
+/* Contenedor principal del login */
 .login-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #121212; /* Fondo negro */
 }
 
+/* Caja del formulario */
 .login-box {
-  background: rgba(245, 222, 179, 0.2); /* Crema con transparencia */
-  backdrop-filter: blur(10px);
+  background-color: #1E1E1E; /* Negro intermedio */
   padding: 3rem;
   border-radius: 16px;
   border: 2px solid #7B1E32; /* Contorno vino */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(123, 30, 50, 0.3);
   width: 24rem;
   text-align: center;
 }
 
+/* Título */
 .login-title {
-  color: white;
-  font-size: 1.5rem;
+  color: #F5DEB3; /* Crema */
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Campos de entrada */
 .login-input {
   width: 100%;
   padding: 0.75rem;
-  border-radius: 8px;
-  background: rgba(245, 222, 179, 0.5); /* Crema claro */
-  color: black;
+  border-radius: 10px;
+  background-color: #2C2C2C; /* Fondo input oscuro */
+  color: #F5DEB3; /* Texto crema */
+  border: 2px solid #7B1E32;
   margin-bottom: 1rem;
-  border: 2px solid #7B1E32; /* Contorno vino */
   outline: none;
+  transition: border 0.3s;
+}
+
+.login-input::placeholder {
+  color: #C4B59B; /* Placeholder crema suave */
 }
 
 .login-input:focus {
-  border: 2px solid #7B1E32;
+  border-color: #F5DEB3;
 }
 
+/* Botón */
 .login-button {
   width: 100%;
-  background-color: #7B1E32; /* Vino */
-  color: white;
+  background-color: transparent;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
   padding: 0.75rem;
-  border-radius: 8px;
-  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .login-button:hover {
-  background-color: #5A1625; /* Vino más oscuro */
-}
-
-.login-register-text {
+  background-color: #7B1E32;
   color: white;
-  margin-top: 1rem;
 }
 
+/* Texto debajo del botón */
+.login-register-text {
+  color: #F5DEB3;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Enlace de registro */
 .login-register-link {
-  color: #F5DEB3; /* Crema */
+  color: #F5DEB3;
+  font-weight: bold;
   cursor: pointer;
 }
 

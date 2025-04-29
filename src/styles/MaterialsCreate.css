@@ -1,80 +1,88 @@
-/* Contenedor principal del formulario de creación de material */
+/* Contenedor principal */
 .create-material-container {
-  width: 80%;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #121212; /* Fondo negro */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
 }
 
-/* Título del formulario */
-.create-material-container h2 {
+/* Caja del formulario */
+.create-material-box {
+  background-color: #1E1E1E; /* Negro intermedio */
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 2px solid #7B1E32;
+  box-shadow: 0 6px 16px rgba(123, 30, 50, 0.3);
+  width: 70%;
+  max-width: 1000px;
   text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: white; /* Texto blanco */
 }
 
-/* Estilos del formulario */
+/* Título */
+.create-material-title {
+  color: #F5DEB3;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Formulario */
 .create-material-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-/* Estilos para cada campo del formulario */
-.create-material-form .form-group {
+/* Grupo de campos */
+.material-field {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 /* Etiquetas */
-.create-material-form label {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: white; /* Texto blanco */
+.material-label {
+  color: #F5DEB3;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-/* Campos de entrada (input) y select */
-.create-material-form input,
-.create-material-form select {
-  padding: 12px;
-  font-size: 16px;
-  border: 2px solid #7B1E32; /* Contorno vino */
-  border-radius: 8px;
-  background: rgba(245, 222, 179, 0.9); /* Fondo cremita */
-  color: black;
-  transition: border 0.3s ease-in-out;
-}
-
-/* Estilo al enfocar un campo de entrada o selección */
-.create-material-form input:focus,
-.create-material-form select:focus {
-  border-color: #F5DEB3; /* Crema */
+/* Campos de entrada */
+.material-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background-color: #2C2C2C;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
   outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.material-input::placeholder {
+  color: #C4B59B;
+}
+
+.material-input:focus {
+  border-color: #F5DEB3;
 }
 
 /* Botón de envío */
-.submit-button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #7B1E32; /* Vino */
-  color: white;
-  border: 2px solid #7B1E32; /* Contorno vino */
-  border-radius: 8px;
+.material-button {
+  grid-column: span 2;
+  background-color: transparent;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
+  padding: 0.75rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
-/* Hover del botón */
-.submit-button:hover {
-  background-color: #5A1625; /* Vino más oscuro */
-  border-color: #F5DEB3; /* Crema */
-}
-
-/* Estilo para errores o campos inválidos */
-.create-material-form input:invalid,
-.create-material-form select:invalid {
-  border-color: #e74c3c;
+.material-button:hover {
+  background-color: #7B1E32;
+  color: white;
 }

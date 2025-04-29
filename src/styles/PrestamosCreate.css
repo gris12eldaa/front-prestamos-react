@@ -1,89 +1,94 @@
-/* Contenedor principal del formulario de creación */
+/* Contenedor principal centrado */
 .create-prestamo-container {
-  width: 80%;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #121212; /* Fondo negro */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #121212;
 }
 
-/* Título del formulario */
-.create-prestamo-container h2 {
+/* Caja del formulario de préstamo */
+.create-prestamo-box {
+  background-color: #1E1E1E;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 2px solid #7B1E32;
+  box-shadow: 0 6px 16px rgba(123, 30, 50, 0.3);
+  width: 70%;
+  max-width: 1000px;
   text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: white; /* Texto blanco */
 }
 
-/* Estilos del formulario */
+/* Título */
+.create-prestamo-title {
+  color: #F5DEB3;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Formulario en columnas responsivas */
 .create-prestamo-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-/* Estilos para cada campo del formulario */
-.create-prestamo-form .form-group {
+/* Grupo de campos */
+.prestamo-field {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 /* Etiquetas */
-.create-prestamo-form label {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: white; /* Texto blanco */
+.prestamo-label {
+  color: #F5DEB3;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-/* Campos de selección (select) */
-.create-prestamo-form select {
-  padding: 12px;
-  font-size: 16px;
-  border: 2px solid #7B1E32; /* Contorno vino */
-  border-radius: 5px;
-  background: rgba(245, 222, 179, 0.9); /* Fondo crema */
-  color: black; /* Texto negro */
-  transition: border 0.3s ease-in-out;
-}
-
-/* Campos de entrada (input) */
-.create-prestamo-form input {
-  padding: 12px;
-  font-size: 16px;
-  border: 2px solid #7B1E32; /* Contorno vino */
-  border-radius: 5px;
-  background: rgba(245, 222, 179, 0.9); /* Fondo crema */
-  color: black; /* Texto negro */
-  transition: border 0.3s ease-in-out;
-}
-
-/* Estilo al enfocar un campo de entrada o selección */
-.create-prestamo-form input:focus,
-.create-prestamo-form select:focus {
-  border-color: #A52A2A; /* Rojo oscuro */
+/* Campos input y select */
+.prestamo-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background-color: #2C2C2C;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
   outline: none;
+  transition: border-color 0.3s ease;
 }
 
-/* Botón de envío */
-.submit-button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #7B1E32; /* Vino */
-  color: white;
-  border: 2px solid #7B1E32; /* Contorno vino */
-  border-radius: 5px;
+.prestamo-input::placeholder {
+  color: #C4B59B;
+}
+
+.prestamo-input:focus {
+  border-color: #F5DEB3;
+}
+
+/* Botón de registro */
+.prestamo-button {
+  grid-column: span 2;
+  background-color: transparent;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
+  padding: 0.75rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
-/* Hover del botón */
-.submit-button:hover {
-  background-color: #5A1625; /* Vino más oscuro */
+.prestamo-button:hover {
+  background-color: #7B1E32;
+  color: white;
 }
 
-/* Estilo para errores o campos inválidos */
-.create-prestamo-form input:invalid,
-.create-prestamo-form select:invalid {
-  border-color: #e74c3c; /* Rojo de error */
+/* Campos inválidos */
+.prestamo-input:invalid {
+  border-color: #e74c3c;
 }

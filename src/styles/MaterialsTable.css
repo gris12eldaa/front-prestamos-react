@@ -1,75 +1,87 @@
 .materiales-container {
-    padding: 20px;
+    padding: 40px;
     background-color: #121212; /* Fondo negro */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Título */
 h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white; /* Texto blanco */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #F5DEB3; /* Color crema */
 }
 
 /* Tabla de materiales */
 .materiales-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    background-color: #1E1E1E; /* Negro intermedio */
+    border: 2px solid #7B1E32; /* Contorno vino */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(123, 30, 50, 0.3);
+    margin-top: 20px;
 }
 
-/* Estilos de encabezados y celdas */
+/* Encabezados y celdas */
 .materiales-table th,
 .materiales-table td {
-    padding: 12px;
+    padding: 16px;
     text-align: center;
-    border: 2px solid #7B1E32; /* Contorno vino */
-    background: rgba(245, 222, 179, 0.9); /* Fondo crema */
-    color: black; /* Texto negro */
+    border-bottom: 1px solid #7B1E32; /* Línea inferior vino */
+    color: #F5DEB3; /* Texto crema */
 }
 
-/* Encabezados de la tabla */
+/* Encabezados */
 .materiales-table th {
     background-color: #7B1E32; /* Fondo vino */
-    color: white; /* Texto blanco */
+    color: white;
+    font-size: 1.1rem;
 }
 
 /* Filas pares */
 .materiales-table tr:nth-child(even) {
-    background-color: rgba(245, 222, 179, 0.7); /* Crema más claro */
+    background-color: #1A1A1A; /* Fondo negro más claro */
 }
 
-/* Efecto hover */
+/* Hover sobre filas */
 .materiales-table tr:hover {
-    background-color: rgba(245, 222, 179, 1); /* Crema más intenso */
+    background-color: #2C2C2C; /* Hover gris oscuro */
 }
 
-/* Estilos de los botones */
+/* Estilos de botones */
 button {
-    padding: 8px 15px;
+    padding: 10px 20px;
     font-size: 14px;
     margin: 5px;
-    border: 2px solid #7B1E32; /* Contorno vino */
+    border: 2px solid transparent;
     border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 /* Botón de edición */
 .edit-button {
-    background-color: #7B1E32; /* Vino */
-    color: white;
+    background-color: transparent;
+    color: #F5DEB3; /* Texto crema */
+    border: 2px solid #7B1E32; /* Contorno vino */
 }
 
 .edit-button:hover {
-    background-color: #5A1625; /* Vino más oscuro */
+    background-color: #7B1E32; /* Fondo vino */
+    color: white;
 }
 
 /* Botón de eliminación */
 .delete-button {
-    background-color: #f44336; /* Rojo */
-    color: white;
+    background-color: transparent;
+    color: #f44336; /* Texto rojo */
+    border: 2px solid #f44336;
 }
 
 .delete-button:hover {
-    background-color: #e53935; /* Rojo más oscuro */
+    background-color: #f44336; /* Fondo rojo */
+    color: white;
 }

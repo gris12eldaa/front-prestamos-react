@@ -1,82 +1,115 @@
-/* Eliminar márgenes y padding del body y html */
+/* Reset de márgenes */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Fondo negro */
 }
 
+/* Contenedor principal */
 .register-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #121212; /* Fondo negro */
+  padding: 1rem;
 }
 
+/* Caja del formulario */
 .register-box {
-  background: rgba(245, 222, 179, 0.8); /* Crema con menos transparencia */
-  backdrop-filter: blur(10px);
-  padding: 2rem;
+  background-color: #1E1E1E; /* Negro intermedio */
+  padding: 2.5rem;
   border-radius: 16px;
-  border: 2px solid #7B1E32; /* Contorno vino */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  border: 2px solid #7B1E32;
+  box-shadow: 0 6px 16px rgba(123, 30, 50, 0.3);
   width: 70%;
+  max-width: 1000px;
   text-align: center;
 }
 
+/* Título */
 .register-title {
-  color: white; /* Texto blanco */
-  font-size: 1.5rem;
+  color: #F5DEB3; /* Crema */
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
+/* Formulario */
 .register-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas de tamaño igual */
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
+/* Grupo de campos (label + input) */
+.register-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Labels */
+.register-label {
+  color: #F5DEB3; /* Crema */
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Campos de entrada */
 .register-input {
-  width: 90%;
+  width: 100%;
   padding: 0.75rem;
-  border-radius: 8px;
-  background: rgba(245, 222, 179, 0.5); /* Crema claro */
-  color: black; /* Texto negro */
-  margin-bottom: 1rem;
-  border: 2px solid #7B1E32; /* Contorno vino */
+  border-radius: 10px;
+  background-color: #2C2C2C;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
   outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.register-input::placeholder {
+  color: #C4B59B;
 }
 
 .register-input:focus {
-  border: 2px solid #A52A2A; /* Rojo oscuro al enfocar */
+  border-color: #F5DEB3;
 }
 
+/* Botón de registro */
 .register-button {
-  width: 100%;
-  background-color: #7B1E32; /* Vino */
-  color: white; /* Texto blanco */
+  grid-column: span 2;
+  background-color: transparent;
+  color: #F5DEB3;
+  border: 2px solid #7B1E32;
   padding: 0.75rem;
-  border-radius: 8px;
-  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .register-button:hover {
-  background-color: #5A1625; /* Vino más oscuro */
+  background-color: #7B1E32;
+  color: white;
 }
 
+/* Texto de login */
 .register-login-text {
-  color: white; /* Texto blanco */
-  margin-top: 1rem;
+  color: #F5DEB3;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
 }
 
+/* Enlace a login */
 .register-login-link {
-  color: #F5DEB3; /* Crema */
+  color: #F5DEB3;
+  font-weight: bold;
   cursor: pointer;
 }
 
 .register-login-link:hover {
-  text-decoration: underline; /* Subrayado al pasar el mouse */
+  text-decoration: underline;
 }

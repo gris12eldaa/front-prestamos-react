@@ -64,32 +64,35 @@ export default function UsersTable() {
           </tr>
         </thead>
         <tbody>
-          {usuarios.map((usuario) => (
-            <tr key={usuario.id}>
-              <td>{usuario.id}</td>
-              <td>{usuario.nombre}</td>
-              <td>{usuario.primerApellido} {usuario.segundoApellido}</td>
-              <td>{usuario.tipoUsuario}</td>
-              <td>{usuario.correoElectronico}</td>
-              <td>{usuario.numeroTelefono}</td>
-              <td>{usuario.estatus}</td>
-              <td>
-                <button
-                  className="edit-button"
-                  onClick={() => handleEditar(usuario.id)}
-                >
-                  Editar
-                </button>
-                <button
-                  className="delete-button"
-                  onClick={() => handleEliminar(usuario.id)}
-                >
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+  {usuarios
+    .filter((usuario) => usuario.estatus !== "Suspendido")
+    .map((usuario) => (
+      <tr key={usuario.id}>
+        <td>{usuario.id}</td>
+        <td>{usuario.nombre}</td>
+        <td>{usuario.primerApellido} {usuario.segundoApellido}</td>
+        <td>{usuario.tipoUsuario}</td>
+        <td>{usuario.correoElectronico}</td>
+        <td>{usuario.numeroTelefono}</td>
+        <td>{usuario.estatus}</td>
+        <td>
+          <button
+            className="edit-button"
+            onClick={() => handleEditar(usuario.id)}
+          >
+            Editar
+          </button>
+          <button
+            className="delete-button"
+            onClick={() => handleEliminar(usuario.id)}
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   );
